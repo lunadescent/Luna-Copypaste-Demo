@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastebin</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+  <center><p1>Click to copy your paste permalink</p1></center>
+<button onclick="copyURL()" id="copyButton">Get link</button>
+        <div class="text-display">
+            <p>{{ text }}</p>
+        </div>
+        
+    </div>
+
+    <script>
+        function copyURL() {
+            const currentURL = window.location.href;
+            const copyButton = document.getElementById("copyButton");
+
+            navigator.clipboard.writeText(currentURL);
+
+            copyButton.innerText = "Copied";
+            copyButton.disabled = true;
+
+            setTimeout(function() {
+                copyButton.innerText = "Copy URL";
+                copyButton.disabled = false;
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

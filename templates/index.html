@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastebin</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<body>
+    <div class="container">
+<center><p>Note: links valid for an hour</p></center>
+<center><a href="https://github.com/lunadescent" class="github-link">github.com/lunadescent</a></center>
+        <form action="/" method="POST">
+            <textarea name="text" rows="10" cols="50" placeholder="Enter some text here"></textarea>
+            <button type="submit">Create Link</button>
+        </form>
+    </div>
+</body>
+</html>
